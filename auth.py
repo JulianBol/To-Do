@@ -93,5 +93,9 @@ def login_required(view): # Funcion decoradora
     return wrapped_view
 
 
+@bp.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('login'))
 
 

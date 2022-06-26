@@ -19,7 +19,7 @@
                             {{ todo['description'] }}
                         {% endif %}
                     </h1>
-                    <div class="about">{{ todo['created_at'].strftime(%Y-%m-%d) }}</div>
+                    <div class="about">{{ todo['created_at'].strftime(Y-m-d) }}</div>
                     <a class="action" href="{{ url_for('todo.update', id=todo['id']) }}">Editar</a>
                 </div>
             </li>
