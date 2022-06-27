@@ -20,6 +20,7 @@ def index():
     return render_template('todo/index.html', todos = todos)
 
 
+
 @bp.route('/create', methods = ['GET', 'POST'])
 @login_required
 def create():
@@ -44,6 +45,7 @@ def create():
     return render_template('todo/create.html')
 
 
+
 def get_todo(id):
     db, c = get_db()
     c.execute(
@@ -58,6 +60,7 @@ def get_todo(id):
         abort(404, 'El Todo de id {0} NO EXISTE'.format(id))
     
     return todo
+
 
 
 @bp.route('/<int:id>/update', methods = ['GET', 'POST'])
@@ -87,7 +90,12 @@ def update(id):
     return render_template('todo/update.html', todo = todo)
 
 
+
 @bp.route('/<int:id>/delete', methods = ['GET', 'POST'])
 @login_required
-def delete():
-    return ''
+def delete(id):
+    db, c = get_db()
+    c.execute('delete from todo where id = %s',(id,))
+    db.commit()
+
+    return redirect(url_for('todo.index'))
