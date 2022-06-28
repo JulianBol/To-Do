@@ -10,14 +10,23 @@
 </head>
 <body>
     <nav>
-        <h1>ToDo List</h1>
+        <div class="TodoList">
+            <span>T</span>
+            <span>o</span>
+            <span>D</span>
+            <span>o</span>
+            <span>L</span>
+            <span>i</span>
+            <span>s</span>
+            <span>T</span>
+        </div>
         <ul>
             {% if g.user %}
                 <li><span>{{ g.user['username'] }}</span></li>
                 <li><a href="{{ url_for('auth.logout') }}">Cerrar Sesión</a></li>
             {% else %}
-                <li><a href="{{ url_for('auth.register') }}">Registrarse</a></li>
-                <li><a href="{{ url_for('auth.login') }}">Iniciar Sesión</a></li>
+                <li><a class="registrarce" href="{{ url_for('auth.register') }}">Registrarse</a></li>
+                <li><a class="inicioSesion" href="{{ url_for('auth.login') }}">Iniciar Sesión</a></li>
             {% endif %}
         </ul>
     </nav>
