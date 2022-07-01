@@ -20,7 +20,7 @@
             <span>s</span>
             <span>T</span>
         </div>
-        <ul>
+        <ul class="barraNav-list">
             {% if g.user %}
                 <li><a class="cerrarSesion" href="{{ url_for('auth.logout') }}">Cerrar Sesión</a></li>
                 <li><span class="nameUser">{{ g.user['username'] }}</span></li>

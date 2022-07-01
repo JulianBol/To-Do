@@ -6,7 +6,6 @@ body {
     min-height: 100vh; 
     margin: 0;
     background-color: #E4DCCF;
-    overflow: hidden;
 }
 
 .TodoList {
@@ -17,6 +16,10 @@ body {
     border-right: 1px solid #7D9D9C;
 }
 
+header {
+    padding: 0px 15px;
+    padding-bottom: 15px;
+}
 span {
     width: 100%;
     color: #FF8C32;
@@ -30,18 +33,25 @@ span:not(:first-child) {
     margin-left: -0.3em;
 }
 
-nav {
-    /* background-image: linear-gradient(90deg, #0D0D0D 10%, #014034, 60%,  #36BFB1 100%); */
-    overflow: hidden;
-    left: 0;
-    top: 0;
-    width: 70%;
+section {
+    width: 450px;
     margin: auto;
-    margin-bottom: 35px;
-    /* box-shadow: 0 0.08em 0.5em rgba(0,0,0,0.9); */
+    position: relative;
+    top: 125px;
+    background-color: #F0EBE3;
+    border-radius: 14px;
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.5);
 }
 
-ul {
+nav {
+    width: 70%;
+    margin-left: 15vw;
+    position: fixed;
+    top: 0;
+}
+
+
+.barraNav-list {
     list-style-type: none;
     margin: 0;
     margin-top: 2vh;
@@ -50,10 +60,70 @@ ul {
     
 }
 
-nav ul li {
+nav .barraNav-list li {
     float: right;
     margin-right: .9vw;
 }
+
+.List-todo {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.todo div:first-child {
+    display: inline-block;
+    margin: 15px 0px;
+    padding: 0px 15px;
+}
+
+.about {
+    text-align: right;
+    font-family: monospace;
+    color: #7D9D9C;
+}
+
+.todo h1 {
+    margin: 0;
+    padding: 5px 0px;
+    margin-bottom: 8px;
+    border-top: 1px solid #576F72;
+    border-bottom: 1px solid #576F72;
+    font-family: monospace;
+    font-size: 1.2em;
+    font-weight: 100;
+}
+
+
+.action1 {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #FF8C32;
+    text-decoration: none;
+    color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 1em;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    transition: 0.2s;
+}
+
+
+.action2 {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #7D9D9C;
+    text-decoration: none;
+    color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 1em;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    transition: 0.2s;
+}
+
 
 .registrarce {
     display: block;
@@ -95,14 +165,6 @@ header h1 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: -2px;
-}
-
-section {
-    width: 450px;
-    margin: auto;
-    background-color: #F0EBE3;
-    border-radius: 14px;
-    box-shadow: 1px 1px 8px rgba(0,0,0,0.5);
 }
 
 input {
@@ -180,6 +242,20 @@ label {
     color: #576F72;
 }
 
+
+.action1:hover {
+    background-color: #d77428;
+}
+
+
+.action2:hover {
+    background-color: #576F72;
+}
+
+.cerrarSesion:hover {
+    background-color: #576F72;
+}
+
 input:focus { /* Para cuando se tiene seleccionado un input +*/    border: none;
     outline: none;
     border-bottom: 3px solid #7D9D9C;
@@ -188,6 +264,11 @@ input:focus { /* Para cuando se tiene seleccionado un input +*/    border: none;
 input[type = submit]:hover {
     cursor: pointer;
     background-color: #576F72;
+}
+
+hr {
+   border: 1px solid #E4DCCF;
+   background-color: #E4DCCF;
 }
 
 
