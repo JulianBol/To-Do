@@ -22,8 +22,8 @@
         </div>
         <ul>
             {% if g.user %}
-                <li><span>{{ g.user['username'] }}</span></li>
-                <li><a href="{{ url_for('auth.logout') }}">Cerrar Sesión</a></li>
+                <li><a class="cerrarSesion" href="{{ url_for('auth.logout') }}">Cerrar Sesión</a></li>
+                <li><span class="nameUser">{{ g.user['username'] }}</span></li>
             {% else %}
                 <li><a class="registrarce" href="{{ url_for('auth.register') }}">Registrarse</a></li>
                 <li><a class="inicioSesion" href="{{ url_for('auth.login') }}">Iniciar Sesión</a></li>
