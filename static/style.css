@@ -83,12 +83,23 @@ nav .barraNav-list li {
     color: #7D9D9C;
 }
 
+.todo h1 {
+    margin: 0;
+    padding: 5px 0px;
+    color: #3F4E4F;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.3em;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
 .todo h2 {
     margin: 0;
     padding: 5px 0px;
     margin-bottom: 8px;
     border-top: 1px solid #576F72;
     border-bottom: 1px solid #576F72;
+    color: #3F4E4F;
     font-family: monospace;
     font-size: 1.2em;
     font-weight: 100;
