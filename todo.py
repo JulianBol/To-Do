@@ -52,7 +52,7 @@ def create():
 def get_todo(id):
     db, c = get_db()
     c.execute(
-        'select t.id, t.description, t.completed, t.created_by, t.created_at, u.username '
+        'select t.title, t.id, t.description, t.completed, t.created_by, t.created_at, u.username '
         'from todo t join user u on t.created_by = u.id where t.id = %s',
         (id,)
     )
