@@ -11,6 +11,11 @@ bp = Blueprint('todo', __name__)
 
 @bp.route('/')
 def index():
+    return render_template('todo/index.html')
+
+
+@bp.route('/home')
+def home():
     db, c = get_db()
     c.execute(
         'select t.title, t.id, t.description, u.username, t.completed, t.created_at from todo t JOIN user u on t.created_by = u.id where t.created_by = %s order by created_at desc',
@@ -19,7 +24,7 @@ def index():
 
     todos = c.fetchall()
 
-    return render_template('todo/index.html', todos = todos)
+    return render_template('todo/home.html', todos = todos)
 
 
 
