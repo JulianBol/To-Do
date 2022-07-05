@@ -1,3 +1,4 @@
+from turtle import title
 from flask import(
     Blueprint, flash, g, redirect, render_template, request, url_for
 )
@@ -12,7 +13,7 @@ bp = Blueprint('todo', __name__)
 def index():
     db, c = get_db()
     c.execute(
-        'select t.id, t.description, u.username, t.completed, t.created_at from todo t JOIN user u on t.created_by = u.id where t.created_by = %s order by created_at desc',
+        'select t.title, t.id, t.description, u.username, t.completed, t.created_at from todo t JOIN user u on t.created_by = u.id where t.created_by = %s order by created_at desc',
         (g.user['id'],)
     )
 
@@ -26,6 +27,7 @@ def index():
 @login_required
 def create():
     if request.method == 'POST':
+        title = request.form['title']
         description = request.form['description']
         error = None
 
@@ -37,9 +39,9 @@ def create():
         else:
             db, c = get_db()
             c.execute(
-                'insert into todo (description, completed, created_by)'
-                ' values (%s, %s, %s)',
-                (description, False, g.user['id'])
+                'insert into todo (title, description, completed, created_by)'
+                ' values (%s, %s, %s, %s)',
+                (title, description, False, g.user['id'])
             )
             db.commit()
             return redirect(url_for('todo.index'))

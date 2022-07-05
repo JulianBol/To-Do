@@ -12,13 +12,14 @@
         {% for todo in todos %} 
             <li class="todo">
                 <div>
-                    <h1>
+                    <h1>{{ todo['title'] }}</h1>
+                    <h2>
                         {% if todo['completed'] == 1 %}
                             <strike>{{ todo['description'] }}</strike>
                         {% else %}
                             {{ todo['description'] }}
                         {% endif %}
-                    </h1>
+                    </h2>
                     <div class="about">{{ todo['created_at'].strftime('%Y-%m-%d') }}</div>
                     <a class="action2" href="{{ url_for('todo.update', id=todo['id']) }}">Editar</a>
                 </div>
