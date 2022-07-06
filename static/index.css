@@ -1,0 +1,128 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh; 
+    margin: 0;
+    background-color: #E4DCCF;
+}
+
+
+/* barra de Navegacion */
+nav {
+    width: 70%;
+    margin-left: 15vw;
+    position: fixed;
+    top: 0;
+}
+
+.TodoList {
+    display: inline-block;
+    margin: 2vh 2vw;
+    margin-left: 2.6vw;
+    padding-right: 6px;
+    border-right: 1px solid #7D9D9C;
+}
+
+span {
+    width: 100%;
+    color: #FF8C32;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3.8vw;
+    font-weight: 800;
+    text-shadow: -0.08em 0.03em 0.1em rgba(0,0,0,0.9);
+}
+
+span:not(:first-child) {
+    margin-left: -0.3em;
+}
+
+.barraNav-list {
+    list-style-type: none;
+    margin: 0;
+    margin-top: 2vh;
+    margin-right: 4vw;
+    float: right;
+    
+}
+
+nav .barraNav-list li {
+    float: right;
+    margin-right: .9vw;
+}
+
+.registrarce {
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #7D9D9C;
+    text-decoration: none;
+    color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 1em;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    transition: 0.2s;
+}
+
+.inicioSesion {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #7D9D9C;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 1em;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.2);
+    transition: 0.2s;
+}
+
+
+.registrarce:hover {
+    background-color: #576F72;
+}
+
+.inicioSesion:hover {
+    color: #576F72;
+}
+
+/* Texto de Bienvenida */
+
+.container {
+    position: relative;
+    top: 150px;
+    padding: 1rem;
+}
+
+.container h1 {
+    margin: 0;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 900;
+    font-size: 5rem;
+    background: -webkit-linear-gradient(180deg,#FF8C32, #18978F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -2px;
+}
+
+
+.container p {
+    margin: 0;
+    margin-top: 25px;
+    padding: 0px 5em;
+    font-family: 'Trispace', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.img-container {
+    display: inline-block;
+    margin-top: 15em;
+    width: 100%;
+    height: 222px;
+    background-color: #18978e7b;
+    box-shadow: 0px 4px 2px #18978F;
+    border-radius: 200px 70px 200px 0px;
+}
