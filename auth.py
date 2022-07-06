@@ -86,7 +86,7 @@ def login_required(view): # Funcion decoradora
     @functools.wraps(view)
     def wrapped_view(**kwargs):
         if g.user is None:
-            return redirect(url_for('todo.login'))
+            return redirect(url_for('auth.login'))
         
         return view(**kwargs)
     
