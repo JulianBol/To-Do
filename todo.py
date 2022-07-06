@@ -4,7 +4,7 @@ from flask import(
 )
 
 from werkzeug.exceptions import abort
-from todo.auth import login_required 
+from todo.auth import login_required, logout 
 from todo.db import get_db
 
 bp = Blueprint('todo', __name__)
@@ -49,7 +49,7 @@ def create():
                 (title, description, False, g.user['id'])
             )
             db.commit()
-            return redirect(url_for('todo.index'))
+            return redirect(url_for('todo.home'))
     return render_template('todo/create.html')
 
 
@@ -93,7 +93,7 @@ def update(id):
                 (description, completed, id, g.user['id'])
             )
             db.commit()
-            return redirect(url_for('todo.index'))
+            return redirect(url_for('todo.home'))
 
     return render_template('todo/update.html', todo = todo)
 
@@ -106,4 +106,4 @@ def delete(id):
     c.execute('delete from todo where id = %s and created_by = %s',(id, g.user['id']))
     db.commit()
 
-    return redirect(url_for('todo.index'))
+    return redirect(url_for('todo.home'))

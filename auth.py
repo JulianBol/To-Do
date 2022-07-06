@@ -86,7 +86,7 @@ def login_required(view): # Funcion decoradora
     @functools.wraps(view)
     def wrapped_view(**kwargs):
         if g.user is None:
-            return redirect(url_for('auth.login'))
+            return redirect(url_for('todo.login'))
         
         return view(**kwargs)
     
@@ -96,6 +96,6 @@ def login_required(view): # Funcion decoradora
 @bp.route('/logout')
 def logout():
     session.clear()
-    return redirect(url_for('auth.login'))
+    return redirect(url_for('todo.index'))
 
 
